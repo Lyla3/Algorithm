@@ -1,0 +1,18 @@
+import Foundation
+
+func solution(_ t:String, _ p:String) -> Int {
+	// p의 길이
+    let len = p.count
+    var answer = 0
+
+    for i in 0..<t.count - len + 1 {
+        let startIndex = t.index(t.startIndex, offsetBy: i)
+        let endIndex = t.index(t.startIndex, offsetBy: i + len - 1)
+        let range = startIndex...endIndex
+
+        if Int64(t[range])! <= Int64(p)! {
+            answer += 1
+        }
+    }
+    return answer
+}
