@@ -1,0 +1,21 @@
+import Foundation
+
+// 수의 개수
+let n = Int(readLine()!)!
+
+// 수의 배열
+var nums = readLine()!.split(separator: " ").map{ String($0)}
+
+//String이므로 배열로 더해진다.
+nums.sort(by: { $0 + $1 > $1 + $0 })
+
+var answer = ""
+
+if nums[0] == "0" {
+    print(0)
+} else {
+    for s in nums {
+        answer += s
+    }
+    print(answer)
+}
